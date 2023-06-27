@@ -17,6 +17,8 @@ server.on("connection", (socket) => {
     data.toString().startsWith("Get")
       ? socket.write(await fs.readFile(`.${data.toString().split(" ")[1]}`))
       : socket.write("Hello from server");
+
+    socket.end();
   });
 
   socket.on("close", () => {

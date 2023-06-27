@@ -10,7 +10,6 @@ const httpRequest = (address, path) => {
     console.log("Sending request");
     
     socket.on("data", (data) => {
-      socket.destroy();
       return resolve(data.toString());
     });
     
